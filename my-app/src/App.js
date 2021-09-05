@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Words from "./components/words";
+import container from "./components/container"
 import './App.css';
 
 const App = () => {
@@ -12,9 +13,11 @@ const App = () => {
   const [time, setTime] = useState(30);
   const [inputValue, setInputValue] = useState("");
   const [animation, setAnimation] = useState(null);
+
+  let randomWord = Math.floor(Math.random() * word.length);
   return (
     <div className="App">
-      <h1>Welcome</h1>
+      <container>Welcome</container>
     </div>
   );
 }
