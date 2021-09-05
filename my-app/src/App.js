@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Words from "./components/words";
 import './App.css';
 
 const App = () => {
