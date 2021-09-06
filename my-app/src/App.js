@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Words from "./components/words";
 import container from "./components/container"
 import './App.css';
+import Typeracer from "./components/typeracer"
 
 const App = () => {
   const [word, setWord] = useState(Words);
@@ -18,7 +19,14 @@ const App = () => {
   return (
     <div className="App">
       <container>
-        
+        <Typeracer
+        newWord={newWord}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        disabled={disabled}
+        time={time}
+        animation={animation}
+        />
       </container>
     </div>
   );
