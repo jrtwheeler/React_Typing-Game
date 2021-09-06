@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Words from "./components/words";
-import container from "./components/container"
+import Container from "./components/container";
+import Typeracer from "./components/typeracer";
+import Results from "./components/results";
 import './App.css';
-import Typeracer from "./components/typeracer"
 
 const App = () => {
   const [word, setWord] = useState(Words);
@@ -18,7 +19,7 @@ const App = () => {
   let randomWord = Math.floor(Math.random() * word.length);
   return (
     <div className="App">
-      <container>
+      <Container>
         <Typeracer
         newWord={newWord}
         inputValue={inputValue}
@@ -27,7 +28,7 @@ const App = () => {
         time={time}
         animation={animation}
         />
-      </container>
+      </Container>
     </div>
   );
 }
