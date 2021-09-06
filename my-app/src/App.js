@@ -6,6 +6,7 @@ import Results from "./components/results";
 import './App.css';
 
 const App = () => {
+
   const [word, setWord] = useState(Words);
   const [newWord, setNewWord] = useState(word[0]);
   const [disabled, setDisabled] = useState(true);
