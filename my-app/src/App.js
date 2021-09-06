@@ -17,7 +17,9 @@ const App = () => {
   let randomWord = Math.floor(Math.random() * word.length);
   return (
     <div className="App">
-      <container>Welcome</container>
+      <container>
+        
+      </container>
     </div>
   );
 }
