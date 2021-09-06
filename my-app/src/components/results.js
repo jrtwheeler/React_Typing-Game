@@ -9,11 +9,13 @@ const Results = () => {
                     7
                 </p>
             </div>
-            <div className="correctResults">
-                <p>Correct</p>
-            </div>
-            <div className="wrongResults">
-                <p>Wrong</p>
+            <div className="resultsContainer">
+                <div className="correctResults">
+                    <p>Correct</p>
+                </div>
+                <div className="wrongResults">
+                    <p>Wrong</p>
+                </div>
             </div>
         </div>
     )

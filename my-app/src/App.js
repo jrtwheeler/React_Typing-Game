@@ -28,6 +28,11 @@ const App = () => {
         time={time}
         animation={animation}
         />
+        <Results
+        correctResults={correctResults}
+        wrongResults={wrongResults}
+        countCorrect={countCorrect}
+        />
       </Container>
     </div>
   );
