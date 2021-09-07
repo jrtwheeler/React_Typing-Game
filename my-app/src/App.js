@@ -55,6 +55,8 @@ const App = () => {
           time={time}
           animation={animation}
           handleInput={handleInput}
+          handleStart={handleStart}
+
         />
       </Container>
       <Container>
