@@ -19,36 +19,49 @@ const App = () => {
 
   let randomWord = Math.floor(Math.random() * word.length);
 
-const checkAnswer = () => {
-  if(inputValue.trim() === newWord) {
-    setCorrectResults(prevCorrect => [...prevCorrect, newWord]);
-    setCountCorrect(prevCorrect => prevCorrect +1);
-    return;
-  }
-  setWrongResults(prevWrong => [...prevWrong, inputValue]); 
-};
+  const checkAnswer = () => {
+    if (inputValue.trim() === newWord) {
+      setCorrectResults(prevCorrect => [...prevCorrect, newWord]);
+      setCountCorrect(prevCorrect => prevCorrect + 1);
+      return;
+    }
+    setWrongResults(prevWrong => [...prevWrong, inputValue]);
+  };
 
-const handleInput = e => {
-  
-}
+  const handleInput = e => {
+    if (e.charCode === 13 && inputValue.trim() !== "") {
+      checkAnswer();
+      setNewWord(word[randomWord]);
+      setInputValue('');
+    }
+  };
+
+  const handleStart = () => {
+    setDisabled(!disabled);
+    setCorrectResults([]);
+    setWrongResults([]);
+    setCountCorrect(0);
+    setInputValue("");
+  };
 
   return (
     <div className="App">
       <Container>
         <Typeracer
-        newWord={newWord}
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-        disabled={disabled}
-        time={time}
-        animation={animation}
+          newWord={newWord}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          disabled={disabled}
+          time={time}
+          animation={animation}
+          handleInput={handleInput}
         />
-        </Container>
-        <Container>
+      </Container>
+      <Container>
         <Results
-        correctResults={correctResults}
-        wrongResults={wrongResults}
-        countCorrect={countCorrect}
+          correctResults={correctResults}
+          wrongResults={wrongResults}
+          countCorrect={countCorrect}
         />
       </Container>
     </div>
