@@ -18,6 +18,20 @@ const App = () => {
   const [animation, setAnimation] = useState(null);
 
   let randomWord = Math.floor(Math.random() * word.length);
+
+const checkAnswer = () => {
+  if(inputValue.trim() === newWord) {
+    setCorrectResults(prevCorrect => [...prevCorrect, newWord]);
+    setCountCorrect(prevCorrect => prevCorrect +1);
+    return;
+  }
+  setWrongResults(prevWrong => [...prevWrong, inputValue]); 
+};
+
+const handleInput = e => {
+  
+}
+
   return (
     <div className="App">
       <Container>
@@ -29,6 +43,8 @@ const App = () => {
         time={time}
         animation={animation}
         />
+        </Container>
+        <Container>
         <Results
         correctResults={correctResults}
         wrongResults={wrongResults}

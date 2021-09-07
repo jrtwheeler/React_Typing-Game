@@ -3,7 +3,7 @@ import Button from "./button";
 
 const Typeracer = (props) => {
 
-    const { newWord, inputValue, setInputValue, disabled, time, animation } = props;
+    const { newWord, inputValue, setInputValue, disabled, time, animation, handleInput } = props;
 
     return (
         <div className='typeracer'>
