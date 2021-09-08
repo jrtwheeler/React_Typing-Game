@@ -45,10 +45,15 @@ const App = () => {
   };
 
   useEffect(() => {
-if(time <= 30 && time !== 0 && disabled === false) {
-  setTimeout
-}
-  });
+    if (time <= 30 && time !== 0 && disabled === false) {
+      setTimeout(() => setTime(prevTime => prevTime - 1), 1000);
+    } else if(disabled) {
+      setTime(30);
+      setAnimation(null);
+    } else if (time === 0) {
+      setDisabled(true);
+    }
+  }, [disabled, time]);
 
   return (
     <div className="App">
