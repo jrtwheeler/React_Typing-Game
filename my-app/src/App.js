@@ -55,9 +55,13 @@ const App = () => {
     }
 
     if(time <= 10) {
-      setAnimation("scaleNumber 2s infinite")
+      setAnimation("scaleNumber 2s infinite");
     }
   }, [disabled, time]);
+
+  useEffect (() => {
+    setNewWord(word[randomWord]);
+  }, []);
 
   return (
     <div className="App">
