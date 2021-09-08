@@ -44,6 +44,12 @@ const App = () => {
     setInputValue("");
   };
 
+  useEffect(() => {
+if(time <= 30 && time !== 0 && disabled === false) {
+  setTimeout
+}
+  });
+
   return (
     <div className="App">
       <Container>
