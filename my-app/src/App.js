@@ -53,6 +53,8 @@ const App = () => {
     } else if (time === 0) {
       setDisabled(true);
     }
+
+    
   }, [disabled, time]);
 
   return (
