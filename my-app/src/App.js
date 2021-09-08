@@ -54,7 +54,9 @@ const App = () => {
       setDisabled(true);
     }
 
-    
+    if(time <= 10) {
+      setAnimation("scaleNumber 2s infinite")
+    }
   }, [disabled, time]);
 
   return (
