@@ -3,6 +3,7 @@ import Words from "./components/words";
 import Container from "./components/container";
 import Typeracer from "./components/typeracer";
 import Results from "./components/results";
+import Particles from "react-tsparticles";
 import "./App.css";
 
 const App = () => {
