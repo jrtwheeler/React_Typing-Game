@@ -3,10 +3,9 @@ import Words from "./components/words";
 import Container from "./components/container";
 import Typeracer from "./components/typeracer";
 import Results from "./components/results";
-import './App.css';
+import "./App.css";
 
 const App = () => {
-
   const [word, setWord] = useState(Words);
   const [newWord, setNewWord] = useState(word[0]);
   const [disabled, setDisabled] = useState(true);
@@ -21,18 +20,18 @@ const App = () => {
 
   const checkAnswer = () => {
     if (inputValue.trim() === newWord) {
-      setCorrectResults(prevCorrect => [...prevCorrect, newWord]);
-      setCountCorrect(prevCorrect => prevCorrect + 1);
+      setCorrectResults((prevCorrect) => [...prevCorrect, newWord]);
+      setCountCorrect((prevCorrect) => prevCorrect + 1);
       return;
     }
-    setWrongResults(prevWrong => [...prevWrong, inputValue]);
+    setWrongResults((prevWrong) => [...prevWrong, inputValue]);
   };
 
-  const handleInput = e => {
+  const handleInput = (e) => {
     if (e.charCode === 13 && inputValue.trim() !== "") {
       checkAnswer();
       setNewWord(word[randomWord]);
-      setInputValue('');
+      setInputValue("");
     }
   };
 
@@ -46,20 +45,20 @@ const App = () => {
 
   useEffect(() => {
     if (time <= 30 && time !== 0 && disabled === false) {
-      setTimeout(() => setTime(prevTime => prevTime - 1), 1000);
-    } else if(disabled) {
+      setTimeout(() => setTime((prevTime) => prevTime - 1), 1000);
+    } else if (disabled) {
       setTime(30);
       setAnimation(null);
     } else if (time === 0) {
       setDisabled(true);
     }
 
-    if(time <= 10) {
+    if (time <= 10) {
       setAnimation("scaleNumber 2s infinite");
     }
   }, [disabled, time]);
 
-  useEffect (() => {
+  useEffect(() => {
     setNewWord(word[randomWord]);
   }, []);
 
@@ -75,18 +74,15 @@ const App = () => {
           animation={animation}
           handleInput={handleInput}
           handleStart={handleStart}
-
         />
       </Container>
-      <Container>
-        <Results
-          correctResults={correctResults}
-          wrongResults={wrongResults}
-          countCorrect={countCorrect}
-        />
-      </Container>
+      <Results
+        correctResults={correctResults}
+        wrongResults={wrongResults}
+        countCorrect={countCorrect}
+      />
     </div>
   );
-}
+};
 
 export default App;
