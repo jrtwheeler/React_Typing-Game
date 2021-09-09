@@ -121,6 +121,11 @@ button {
   flex-direction: column;
 }
 
+.resultsHeader {
+  color: #fff;
+  text-transform: uppercase;
+}
+
 .results .title {
   padding: 20px;
   background: #111727;
