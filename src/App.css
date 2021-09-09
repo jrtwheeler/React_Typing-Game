@@ -10,7 +10,7 @@
 button {
   border: none;
   outline: none;
-  background: #f73859;
+  background: #FF101F;;
   color: #fff;
   font-size: 24px;
   font-weight: 600;
@@ -66,7 +66,7 @@ button {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  border: 2px solid #f73859;
+  border: 2px solid #FF101F;;
   color: #fff;
   display: flex;
 }
@@ -151,7 +151,7 @@ button {
 }
 
 .results .resultsContainer::-webkit-scrollbar-thumb {
-  background: #f73859;
+  background: #FF101F;;
   border-radius: 50px;
   outline: 1px solid slategrey;
 }
@@ -167,7 +167,7 @@ button {
 .results .resultsContainer .wrongResults .row {
   width: 100%;
   padding: 14px;
-  background: #f73859;
+  background: #FF101F;
   color: #fff;
   border-radius: 4px;
   word-wrap: break-word;
